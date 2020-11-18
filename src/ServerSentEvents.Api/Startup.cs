@@ -27,6 +27,7 @@ namespace ServerSentEvents.Api
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             app.UseSwagger();
 
             app.UseCors("CorsPolicy");

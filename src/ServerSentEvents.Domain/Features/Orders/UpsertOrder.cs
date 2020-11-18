@@ -44,8 +44,8 @@ namespace ServerSentEvents.Domain.Features.Orders
                 }
 
                 order.CustomerId = request.Order.CustomerId;
-
                 order.Total = request.Order.Total;
+                order.Modified = request.Order.Modified;
 
                 await _context.SaveChangesAsync(cancellationToken);
 

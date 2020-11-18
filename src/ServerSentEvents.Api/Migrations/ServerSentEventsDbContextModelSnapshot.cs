@@ -28,6 +28,9 @@ namespace ServerSentEvents.Api.Migrations
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("Modified")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");
 

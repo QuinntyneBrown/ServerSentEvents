@@ -10,7 +10,7 @@ using ServerSentEvents.Core.Data;
 namespace ServerSentEvents.Api.Migrations
 {
     [DbContext(typeof(ServerSentEventsDbContext))]
-    [Migration("20201118051538_InitialCreate")]
+    [Migration("20201118234441_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,9 @@ namespace ServerSentEvents.Api.Migrations
 
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Modified")
+                        .HasColumnType("datetime2");
 
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");

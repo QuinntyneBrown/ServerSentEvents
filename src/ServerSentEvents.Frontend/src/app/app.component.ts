@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    var source = new EventSource(`${this._baseUrl}api/events`);
+    var source = new EventSource(`${this._baseUrl}api/events/queue`);
 
     source.onmessage = function (event) {
       console.log('onmessage: ' + event.data);

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using ServerSentEvents.Api.Services;
 using ServerSentEvents.Core.Data;
 using ServerSentEvents.Domain.Features.Orders;
 using System;
@@ -15,6 +16,12 @@ namespace ServerSentEvents.Api
     {
         public static void Configure(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddHostedService<NotificationBackgroundService>();
+
+            services.AddSingleton<IBackgroundQueue, BackgroundQueue>();
+
+            services.AddSingleton<INotificationService, NotificationService>();
+
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo

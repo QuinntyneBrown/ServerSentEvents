@@ -9,6 +9,7 @@ namespace ServerSentEvents.Core.Models
         public Guid OrderId { get; set; }
         public Guid CustomerId { get; set; }
         public decimal Total { get; set; }
+        public DateTime Modified { get; set; } = DateTime.Now;
     }
 
 }
