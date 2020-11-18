@@ -1,0 +1,14 @@
+<h1 *ngIf="!order.orderId">Create Order</h1>
+
+<h1 *ngIf="order.orderId">Edit Order</h1>
+
+<form novalidate autocomplete="off" spellcheck="false" [formGroup]="form">
+  <mat-form-field>
+    <input matInput placeholder="Total" id="total" formControlName="total">
+  </mat-form-field>
+</form>
+
+<div class="editor__actions">
+  <button mat-raised-button (click)="handleSaveClick()" color="primary">Save</button>
+  <button mat-button (click)="handleCancelClick()">Cancel</button>
+</div>

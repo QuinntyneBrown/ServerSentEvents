@@ -1,0 +1,62 @@
+@import '../base/variables';
+
+%page-heading {
+    padding: 28px 0px 28px 28px;
+    margin: 0px;
+}
+
+%list-page {
+    h1 {
+        @extend %page-heading;
+    }
+    
+    button {
+        margin: 15px 0px 15px $page-gutter-left;    
+    }
+    
+    table, mat-paginator {
+        margin: 0px 0px 0px $page-gutter-left;
+        width: calc(100% - 60px )
+    }
+}
+
+%edit-page  {
+    background-color: #fff;
+    display: block;
+    height: 100%;
+
+    h1 {
+        @extend %page-heading;
+    }
+    
+    mat-form-field {
+        display: block;
+        max-width: 500px;
+    }
+    
+    form {
+        display: block;
+        margin: 0;
+        padding: 0px 0px 25px $page-gutter-left;
+    }
+    
+    .editor__actions {
+        display: flex;
+        padding: 0px 0px 30px $page-gutter-left;
+        gap: 15px    
+    }
+    
+}
+
+%detail-page {
+    @extend %edit-page;
+}
+
+%dashboard-card {
+    background-color: #fff;
+    box-shadow: 5px 3px 11px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    grid-column: var(--grid-column-start, 0) / var(--grid-column-stop, 0);
+    grid-row: var(--grid-row-start, 0) / var(--grid-row-stop, 0);
+    overflow: hidden;
+}

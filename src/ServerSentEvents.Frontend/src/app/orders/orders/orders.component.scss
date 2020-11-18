@@ -1,0 +1,6 @@
+@import '../../../assets/base/variables';
+@import '../../../assets/base/placeholders';
+
+:host {
+    @extend %list-page;
+}

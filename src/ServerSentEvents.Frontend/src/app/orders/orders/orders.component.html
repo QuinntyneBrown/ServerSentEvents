@@ -1,0 +1,19 @@
+<h1>Orders</h1>
+
+<button mat-raised-button (click)='handleCreateClick()'>Create</button>
+
+<table *ngIf="dataSource$ | async as dataSource" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td style="width:100px" mat-cell *matCellDef="let order">
+          <button mat-icon-button (click)="handleEditClick(order)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let data; columns: columnsToDisplay"></tr>
+
+</table>
